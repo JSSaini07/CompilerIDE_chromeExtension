@@ -7,7 +7,3 @@ A chrome extension for my compilerIDE project, lets a user compile and run their
 * Open chrome://extensions in chrome and check the developer option
 * Click on load unpacked extension and load the extension.
 * Now select the code you want to run and according to the key binding, press the keys.
-
-<video autoplay controls>
-  <source src='./demo/compilerIDE_chromExtension.mp4' type='video/mp4'>
-</video>
