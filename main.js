@@ -44,16 +44,19 @@ $(document).on('keydown',function(e){
   if(e.key==baseKey){
     basePressed*=-1;
   }
+  else
+  if(key_map[baseKey][e.key]!=undefined&&basePressed==1&&window.getSelection().toString()!=""){
+    document.execCommand('copy');
+    chrome.runtime.sendMessage(key_map[baseKey][e.key]);
+  }
 });
+
+window.onblur=function(){
+  basePressed=-1;
+}
 
 $(document).on('keyup',function(e){
   if(e.key==baseKey){
     basePressed*=-1;
-  }
-  else
-  if(key_map[baseKey][e.key]!=undefined&&basePressed==1&&window.getSelection().toString()!=""){
-    document.execCommand('copy');
-    basePressed*=-1;
-    chrome.runtime.sendMessage(key_map[baseKey][e.key]);
   }
 });
